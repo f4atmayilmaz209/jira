@@ -1,5 +1,5 @@
 "use client"
-
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 import {FcGoogle} from "react-icons/fc";
 import {FaGithub,} from "react-icons/fa";
 import { DottedSeparator } from "@/components/dotted-separator"
@@ -125,6 +125,7 @@ export const SignUpCard=()=>{
             <CardContent className="p-7 flex flex-col gap-y-4">
                 <Button
                     disabled={isPending}
+                    onClick={()=>signUpWithGoogle()}
                     variant="secondary"
                     size="lg"
                     className="w-full"
@@ -134,6 +135,7 @@ export const SignUpCard=()=>{
                 </Button>
                 <Button
                     disabled={isPending}
+                    onClick={()=>signUpWithGithub()}
                     variant="secondary"
                     size="lg"
                     className="w-full"
